@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.UserInforDao">
+
+    <select id="countUId"  parameterType="int" resultType="int">
+        select count(u_id) from user_infor where  u_id = #{id};
+    </select>
+    <insert id="saveInfor" parameterType="UserInfor">
+        insert into user_infor values(#{uId},#{name},#{imgUrl},#{theSay})
+    </insert>
+    <update id="updateInfor" parameterType="UserInfor">
+        update user_infor set name = #{name},img_url = #{imgUrl},the_say = #{theSay} where u_id = #{uId}
+    </update>
+    <select id="getInfor" parameterType="int" resultType="UserInfor">
+        select u_id uId,name,img_url imgUrl,the_say theSay from user_infor where u_id = #{id}
+    </select>
+</mapper>

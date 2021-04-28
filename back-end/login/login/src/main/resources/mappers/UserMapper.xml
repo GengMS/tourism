@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.UserDao">
+
+    <select id="getUserById" resultType="User">
+        select u_id uId,email,passwd,identity,is_infor infor from user where u_id = #{id}
+    </select>
+    <select id="getUser" resultType="User">
+        select u_id uId,email,passwd,identity,is_infor infor from user where email = #{email} and passwd = #{passwd}
+    </select>
+    <insert id="saveUser" >
+        insert into user(email,passwd) values(#{email},#{passwd});
+    </insert>
+    <update id="updateUserPasswd" >
+        update user set passwd = #{passwd} where email = #{email}
+    </update>
+    <update id="updateUserInfor">
+        update user set is_infor = 1 where u_id = #{id}
+    </update>
+    <select id="hadInfor" parameterType="int" resultType="integer">
+        select is_infor from user where u_id = #{id}
+    </select>
+    <select id="getMail" parameterType="int" resultType="String">
+        select email from user where u_id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "dong": "/pages/compent/dongTai",
+    "send-dong": "/pages/compent/sendDong"
+  }
+}

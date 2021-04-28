@@ -1,0 +1,26 @@
+
+.imgList_geng{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.imgList_geng>view{
+	max-width: 33%;
+	width: 33%;
+	height: 100px;
+	position: relative;
+}
+.imgList_geng>view>image{
+	width: 100%;
+	height: 100%;
+}
+.imgList_geng .delete{
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	color: white;
+	z-index: 999;
+}
+

@@ -1,0 +1,29 @@
+
+.dong_imgList.data-v-16935958{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		        flex-wrap: wrap;
+}
+.dong_imgList image.data-v-16935958{
+		padding: 0.1%;
+		height: 130px;
+		width: 33%;
+		max-width: 33%;
+}
+.sendDong.data-v-16935958{
+	position: fixed;
+	top: 25%;
+	left: 50%;
+	width: 80%;
+	-webkit-transform: translate(-50%);
+	        transform: translate(-50%);
+	padding: 10px;
+	background: white;
+	-webkit-border-radius: 4px;
+	        border-radius: 4px;
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+	        box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+

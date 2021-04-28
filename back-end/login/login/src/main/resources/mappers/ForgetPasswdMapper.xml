@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.ForgetPasswdDao">
+    <insert id="saveMailCode" parameterType="String">
+        insert into forget_passwd(email,mail_code) values(#{email}, #{mailCode});
+    </insert>
+    <select id="countEmailByCode" resultType="int" >
+        select count(email) from forget_passwd where mail_code = #{mailCode} and (select TIMESTAMPDIFF(SECOND, forget_passwd.update_time, (SELECT NOW())))  &lt;=  120 and email = #{email}
+    </select>
+</mapper>

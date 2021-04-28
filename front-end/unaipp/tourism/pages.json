@@ -1,0 +1,134 @@
+{
+	"pages": [{
+		"path": "pages/index/index"
+	}, {
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/register/register",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/lv_tu/lv_tu",
+		"style": {
+			"navigationBarTitleText": "旅图",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/lv_tai/lv_tai",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": true
+		}
+
+	},{
+		"path":"pages/team/team",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": true
+			
+		}
+	}    ,{
+            "path" : "pages/forgetPasswd/forgetPasswd",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/mine",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/compent/dongTai",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/compent/sendDong",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/comment/comment",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/teamInfor/teamInfor",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "通了旅游",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"background": "#efeff4"
+		}
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"height": "50px",
+		"fontSize": "10px",
+		"iconWidth": "24px",
+		"spacing": "3px",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/tabbar/index.png",
+			"selectedIconPath":"static/tabbar/index_act.png",
+			"text": "主页"
+		},{
+			"pagePath":"pages/team/team",
+			"iconPath":"static/tabbar/team.png",
+			"selectedIconPath":"static/tabbar/team_act.png",
+			"text":"旅游团"
+		},{
+			"pagePath":"pages/lv_tai/lv_tai",
+			"iconPath":"static/tabbar/dong_tai.png",
+			"selectedIconPath":"static/tabbar/dong_tai_act.png",
+			"text":"旅态"
+		},{
+			"pagePath":"pages/mine/mine",
+			"iconPath":"static/tabbar/mine.png",
+			"selectedIconPath":"static/tabbar/mine_act.png",
+			"text":"我的"
+		}]
+	}
+}

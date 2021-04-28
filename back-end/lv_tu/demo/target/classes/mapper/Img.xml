@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinhua.mapper.ImgMapper">
+    <!--    //添加图片-->
+    <insert id="saveImg" parameterType="com.xinhua.domain.Img">
+        insert into img (i_id, img_url, dateime, u_id)
+        values (null, #{img_url}, #{dateime}, #{u_id})
+    </insert>
+
+    <!--根据I_id删除图片-->
+    <delete id="deleteIid" parameterType="Integer">
+        delete
+        from img
+        where i_id = #{i_id}
+    </delete>
+
+    <!--根据u_id(用户id)查询图片-->
+    <select id="findByUid" parameterType="Integer" resultType="com.xinhua.domain.Img">
+        select *
+        from img
+        where u_id = #{u_id}
+         order by dateime desc ;
+    </select>
+
+</mapper>

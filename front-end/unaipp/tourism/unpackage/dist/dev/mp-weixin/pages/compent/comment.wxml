@@ -1,0 +1,1 @@
+<view class="comment_content data-v-07621d63"><view class="data-v-07621d63"><image src="{{commentData.imgUrl}}" mode class="data-v-07621d63"></image>{{''+commentData.name+''}}</view><view class="data-v-07621d63">{{''+commentData.content+''}}</view></view>
