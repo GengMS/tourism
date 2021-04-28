@@ -1,5 +1,7 @@
 ### 前端忽略
 ./front-end/front-end/dist/node_modules
 ./front-end/front-end/dist/dist
-### 后端沪铝
+./front-end/uniapp/tourism/node_modules
+./front-end/uniapp/tourism/unpackage
+### 后端忽略
 ./back-end/*/*/target
