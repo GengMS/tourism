@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.DongDao">
+    <delete id="delDong" parameterType="int">
+        delete from dong where d_id = #{dId}
+    </delete>
+    <insert id="saveDong" parameterType="map" useGeneratedKeys="true" keyProperty="dId" keyColumn="d_id">
+        insert into dong(u_id,type,sight) values(#{uId}, #{type},#{sight})
+    </insert>
+    <resultMap id="Dong" type="Dong">
+        <id property="dId" column="d_id"/>
+        <result property="uId" column="u_id"/>
+        <result property="type" column="type"/>
+        <result property="dotCount" column="dot_count"/>
+        <result property="sight" column="sight"/>
+        <result property="commentsCount" column="comments_count"/>
+        <collection property="content" ofType="DongContent">
+            <result property="type" column="dType"/>
+            <result property="content" column="content"/>
+        </collection>
+    </resultMap>
+    <select id="getDong" resultMap="Dong" resultType="int">
+        select d.*,c.type dType,c.content content from dong d,content c
+where d.d_id = c.d_id
+and d.type = 0 and d.d_id = #{dId};
+    </select>
+    <select id="listDong" resultMap="Dong">
+        select d.*,c.type dType,c.content content from dong d,content c
+where d.d_id = c.d_id
+and d.type = 0
+and
+d.d_id in
+(select * from
+(select d_id from dong order by d_id desc limit #{begIndex},#{endIndex} )
+ as t)
+ order by d.d_id desc;
+    </select>
+
+    <update id="increDot">
+        update dong set dot_count = ((select e.dot_count from (select * from dong) e where d_id = #{dId})+1)  where d_id =#{dId}
+    </update>
+    <update id="increComments">
+        update dong set comments_count = ((select e.comments_count from (select * from dong) e where d_id = #{dId})+1)  where d_id =#{dId}
+    </update>
+    <update id="decDot">
+        update dong set dot_count = ((select e.dot_count from (select * from dong) e where d_id = #{dId})-1)  where d_id =#{dId}
+    </update>
+    <select id="getSight" resultType="String">
+        select sight  from dong  group by sight  having count(sight) >= 10 order by count(sight) desc limit 0,3;
+    </select>
+    <select id="countDong" resultType="int">
+        select count(d_id) from dong ;
+    </select>
+    <select id="countDongBySight" resultType="int">
+        select count(d_id) from dong  where sight = #{sight};
+    </select>
+    <select id="listDongBySight" resultMap="Dong">
+               select d.*,c.type dType,c.content content from dong d,content c
+where d.d_id = c.d_id
+and d.type = 0
+and
+d.d_id in
+(select * from
+(select d_id from dong  where sight = #{sight} order by d_id desc limit #{begIndex},#{endIndex} )
+ as t)
+ order by d.d_id desc;
+    </select>
+</mapper>

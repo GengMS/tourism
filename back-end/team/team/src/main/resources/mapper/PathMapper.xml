@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.PathDao">
+    <insert id="savePath">
+        insert into path_infor(t_id, content) values (#{tId},#{content});
+    </insert>
+    <delete id="delPath" parameterType="int">
+        delete from path_infor where t_id = #{tId};
+    </delete>
+</mapper>

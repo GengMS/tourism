@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.PhoneNumDao">
+    <insert id="savePhoenNum" parameterType="long">
+        insert into phone_num(phone_number) values(#{phoneNumber});
+    </insert>
+    <select id="listPhoneNum" resultType="Integer">
+        select phone_number from phone_num order by p_id desc;
+    </select>
+    <select id="countPhoneNum" resultType="int" parameterType="long">
+        select count(p_id) from phone_num where phone_number = #{phoneNumber}
+    </select>
+</mapper>

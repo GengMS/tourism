@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.InforImgDao">
+   <insert id="saveInforImg" >
+       insert into team_infor_img(t_id, img_url) values (#{tId}, #{imgUrl})
+   </insert>
+    <delete id="delInforImg" parameterType="int">
+        delete from team_infor_img where t_id = #{tId};
+    </delete>
+</mapper>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.InforDao">
+    <insert id="saveInfor" parameterType="TeamInforFront" useGeneratedKeys="true" keyProperty="tId" keyColumn="t_id">
+        insert into team_infor(introduce,price,departure,destination,provider) values(#{introduce}, #{price}, #{departure},#{destination},#{provider})
+    </insert>
+    <delete id="delInfor" parameterType="int">
+        delete from team_infor where t_id = #{tId}
+    </delete>
+    <resultMap id="TeamInfor" type="TeamInforFront">
+        <id column="t_id" property="tId"/>
+        <result column="introduce" property="introduce"/>
+        <result column="price" property="price"/>
+        <result column="departure" property="departure"/>
+        <result column="destination" property="destination"/>
+        <result column="provider" property="provider"/>
+       <collection property="fileList" ofType="String">
+           <result property="fileList" column="img_url"/>
+       </collection>
+        <collection property="buZhou" ofType="String">
+            <result property="buZhou" column="content"/>
+        </collection>
+    </resultMap>
+    <select id="listTeamInfor" resultMap="TeamInfor" parameterType="int">
+         select t.*,p.content,ti.img_url from (select * from team_infor
+         order by t_id desc
+         limit #{pageIndex},10) t,path_infor p,team_infor_img ti where t.t_id = p.t_id and t.t_id = ti.t_id
+    </select>
+    <select id="getTeamInfor" parameterType="int" resultMap="TeamInfor">
+         select t.*,p.content,ti.img_url from team_infor t,path_infor p,team_infor_img ti where t.t_id = p.t_id and t.t_id = ti.t_id and t.t_id = #{tId};
+    </select>
+    <select id="listTeamInforByOption" resultMap="TeamInfor">
+         select t.*,p.content,ti.img_url from
+         (select * from team_infor
+         <where>
+             <if test="selectOptions.departure != null">
+                 and departure = #{selectOptions.departure}
+             </if>
+             <if test="selectOptions.destination != null">
+                 and destination = #{selectOptions.destination}
+             </if>
+             <if test="selectOptions.priceList != null &amp; selectOptions.priceList.length == 2">
+                 and (price between #{selectOptions.priceList[0]} and #{selectOptions.priceList[1]})
+             </if>
+             <if test="selectOptions.priceList != null &amp; selectOptions.priceList.length == 4">
+                 and (price between #{selectOptions.priceList[0]} and #{selectOptions.priceList[1]} or price between #{selectOptions.priceList[2]} and #{selectOptions.priceList[3]})
+             </if>
+         </where>
+        <choose>
+            <when test="selectOptions.order != null &amp; selectOptions.order ">
+                order by price desc, t_id desc
+            </when>
+            <when test="selectOptions.order != null &amp; !selectOptions.order">
+                order by price, t_id desc
+            </when>
+            <otherwise>
+                order by t_id desc
+            </otherwise>
+        </choose>
+
+        limit #{pageIndex},10
+         ) t,path_infor p,team_infor_img ti where t.t_id = p.t_id and t.t_id = ti.t_id
+
+    </select>
+    <select id="countTeamInforByOption"  resultType="int">
+        select count(t_id) from team_infor
+        <where>
+            <if test="selectOptions.departure != null">
+                and departure = #{selectOptions.departure}
+            </if>
+            <if test="selectOptions.destination != null">
+                and destination = #{selectOptions.destination}
+            </if>
+            <if test="selectOptions.priceList != null &amp; selectOptions.priceList.length == 2">
+                and (price between #{selectOptions.priceList[0]} and #{selectOptions.priceList[1]})
+            </if>
+            <if test="selectOptions.priceList != null &amp; selectOptions.priceList.length == 4">
+                and (price between #{selectOptions.priceList[0]} and #{selectOptions.priceList[1]} or price between #{selectOptions.priceList[2]} and #{selectOptions.priceList[3]})
+            </if>
+        </where>
+    </select>
+    <select id="countTeamInfor" resultType="int">
+        select count(t_id) from team_infor;
+    </select>
+    <select id="hasTId" resultType="int" parameterType="int">
+        select count(t_id) from team_infor where t_id = #{tId}
+    </select>
+</mapper>

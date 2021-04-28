@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: team
+  datasource:
+    name: test #���ݿ���
+    url: jdbc:mysql://localhost:3306/team_matter?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root #�˻���
+    password: root #����
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: public
+        username: nacos
+        password: nacos
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      eager: true
+  redis:
+    port: 6379
+    host: 127.0.0.1
+seata:
+  enabled: true
+  tx-service-group: my_test_tx_group	# my_test_tx_group改成config.text中自己的事务分组名称
+  enable-auto-data-source-proxy: true
+  service:
+    vgroup-mapping:
+      my_test_tx_group: default # my_test_tx_group改成config.text中自己的事务分组名称
+    grouplist:
+      default: 127.0.0.1:8091
+    enable-degrade: false
+    disable-global-transaction: false
+  config:
+    type: nacos
+    nacos:
+      namespace:
+      serverAddr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      username: "nacos"
+      password: "nacos"
+      cluster: default
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      group : SEATA_GROUP
+      namespace:
+      username: "nacos"
+      password: "nacos"
+      cluster: default
+server:
+  port: 84
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #����ӳ���ļ�
+  type-aliases-package: com.xinhua.geng.entity  #����ʵ����
+
+
+

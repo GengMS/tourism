@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.DotDao">
+    <insert id="saveDot" >
+        insert into dot(d_id,u_id) values(#{dId}, #{uId})
+    </insert>
+    <delete id="delDot">
+        delete from dot where d_id = #{dId} and u_id = #{uId}
+    </delete>
+    <select id="getDot" resultType="int">
+        select count(d_id) from dot where d_id = #{dId} and u_id = #{uId}
+    </select>
+    <delete id="delDotbyDid">
+        delete from dot where d_id = #{dId}
+    </delete>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinhua.geng.dao.CommentDao">
+   <insert id="saveComment" >
+       insert into comment(d_id,u_id,content) values(#{dId},#{uId},#{comment})
+   </insert>
+    <delete id="delComment">
+        delete from comment where d_id = #{dId}
+    </delete>
+
+    <select id="listComments" resultType="Comment" parameterType="int">
+        select u_id as uId,content from comment where d_id = #{dId} order by c_id desc;
+    </select>
+</mapper>
