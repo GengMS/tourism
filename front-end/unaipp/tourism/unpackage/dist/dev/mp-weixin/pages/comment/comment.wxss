@@ -16,8 +16,7 @@
 .dongTai.data-v-27303ffc{
 	padding: 10px ;
 	background: rgba(0, 0, 0, 0.04);
-	-webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-	        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 	margin-top: 20px;
 }
 .user_infor.data-v-27303ffc{
@@ -31,8 +30,7 @@
 .user_infor>image.data-v-27303ffc{
 	width: 40px;
 	height: 40px;
-	-webkit-border-radius: 4px;
-	        border-radius: 4px;
+	border-radius: 4px;
 }
 .title.data-v-27303ffc{
 	font-size: 20px;
@@ -88,8 +86,7 @@
 	height: 45px;
 	font-size: 30px;
 	line-height: 30px;
-	 -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-	         box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+	 box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
 }
 .ping>button.data-v-62ac83c6{
 	width: 30%;

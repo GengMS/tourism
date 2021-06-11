@@ -26,7 +26,6 @@ public class SendMail {
      */
     public static void sendSimpleMail(String to,String subject,  String content) {
 
-
         //创建SimpleMailMessage对象
         SimpleMailMessage message = new SimpleMailMessage();
         //邮件发送人

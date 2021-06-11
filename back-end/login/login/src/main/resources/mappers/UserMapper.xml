@@ -25,4 +25,7 @@
     <select id="getMail" parameterType="int" resultType="String">
         select email from user where u_id = #{id}
     </select>
+    <select id="getAllMail" resultType="String">
+        select email from user;
+    </select>
 </mapper>

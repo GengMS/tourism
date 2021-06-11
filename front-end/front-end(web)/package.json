@@ -1,0 +1,68 @@
+{
+  "name": "front-end",
+  "version": "0.1.0",
+  "description": "旅游项目前端",
+  "author": "ice-admin@alibaba-inc.com",
+  "scripts": {
+    "start": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@vue-materials/basic-container": "^1.0.0",
+    "axios": "^0.21.1",
+    "element-china-area-data": "^5.0.2",
+    "element-ui": "^2.3.6",
+    "normalize.css": "^8.0.0",
+    "vue": "^2.5.13",
+    "vue-axios": "^3.2.4",
+    "vue-cookies": "^1.7.4",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.0.1",
+    "vue2-viewer": "^1.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.54",
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.54",
+    "@babel/plugin-proposal-decorators": "7.0.0-beta.54",
+    "@babel/plugin-proposal-export-namespace-from": "7.0.0-beta.54",
+    "@babel/plugin-proposal-function-sent": "7.0.0-beta.54",
+    "@babel/plugin-proposal-json-strings": "7.0.0-beta.54",
+    "@babel/plugin-proposal-numeric-separator": "7.0.0-beta.54",
+    "@babel/plugin-proposal-throw-expressions": "7.0.0-beta.54",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.54",
+    "@babel/plugin-syntax-import-meta": "7.0.0-beta.54",
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-eslint": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "@vue/eslint-config-airbnb": "^3.0.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "vue-template-compiler": "^2.5.13",
+    "vue-waterfall-easy": "^2.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/vue-materials/tree/master/scaffolds/admin-lite"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-scaffold"
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "iceworks": {
+    "type": "vue",
+    "adapter": "adapter-vue-v2"
+  },
+  "ideMode": {
+    "name": "ice-vue"
+  },
+  "private": true,
+  "originTemplate": "@vue-materials/admin-lite"
+}

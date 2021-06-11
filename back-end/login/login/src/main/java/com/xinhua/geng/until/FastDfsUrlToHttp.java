@@ -20,7 +20,6 @@ public class FastDfsUrlToHttp {
 
     private static StorageClient storageClient;
     static {
-
             try {
                 storageClient = FastDfsConfig.storageClientBuild();
             } catch (IOException e) {
@@ -28,7 +27,6 @@ public class FastDfsUrlToHttp {
             } catch (MyException e) {
                 e.printStackTrace();
             }
-
     }
 
     public static String FastDfsUrlToHttp(MultipartFile file) throws IOException, MyException {

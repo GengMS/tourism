@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @Author: geng
  * @Date: 2021/4/6 15:25
@@ -53,6 +55,11 @@ public class UserInforServiceImpl implements UserInforService {
     @Override
     public String getMail(int id) {
         return userDao.getMail(id);
+    }
+
+    @Override
+    public List<String> getAllMail() {
+        return  userDao.getAllMail();
     }
 
     @Override

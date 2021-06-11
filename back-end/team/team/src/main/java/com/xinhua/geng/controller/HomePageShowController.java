@@ -28,7 +28,7 @@ public class HomePageShowController {
         if(homePage.getTitle() == null || homePage.getTitle().length()<=0){
             return false;
         }
-        System.out.println("-------------------");
+
         return homePageShowService.saveShowInfor(homePage);
     }
 

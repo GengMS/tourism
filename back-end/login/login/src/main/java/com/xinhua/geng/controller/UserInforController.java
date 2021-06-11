@@ -4,10 +4,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.xinhua.geng.entity.UserInfor;
 import com.xinhua.geng.service.UserInforService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @Author: geng
@@ -40,4 +39,9 @@ public class UserInforController {
     public String getMail(@PathVariable int id){
         return userInforService.getMail(id);
     };
+
+    @GetMapping("/getMail")
+    public List<String> getAllMail(){
+        return userInforService.getAllMail();
+    }
 }

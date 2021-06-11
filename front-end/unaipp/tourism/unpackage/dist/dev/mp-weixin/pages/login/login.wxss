@@ -187,8 +187,7 @@ page {
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  -webkit-border-radius: 12rpx;
-          border-radius: 12rpx;
+  border-radius: 12rpx;
 }
 .login .input-item-sms-code .sms-code-resend {
   color: #666;
